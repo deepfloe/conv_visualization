@@ -47,11 +47,11 @@ def plot_channels(input_image, depth):
     plt.subplots_adjust(wspace=0, hspace=0)
     return fig
 
-def launch_gradio_plot():
+def launch_gradio_demo():
     '''Produces a gradio visualization for the plot of vgg outputs as variable layer depth'''
     outputs = gr.Plot()
     demo = gr.Interface(fn=plot_channels, inputs=["image",gr.Slider(1, 18, step =1)], outputs=outputs)
     demo.launch()
 
 if __name__ == '__main__':
-    launch_gradio_plot()
+    launch_gradio_demo()
